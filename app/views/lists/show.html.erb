@@ -1,6 +1,27 @@
+
+<div class="container mt-4">
+
 <h2><%= @list.name %></h2>
 
+
+
+<ul>
+  <%movies= Movie.all %>
+  <% movies.each do |movie| %>
+  <%= movie.title %>
+  <% end %>
+</ul>
+
+<ul>
+<%= @list.bookmarks.each do |bookmark| %>
+<li><%= bookmark.comment %></li>
+<% end %>
+
+</ul>
+
+
+
 <%= link_to "New Bookmark", new_list_bookmark_path(@list) %>
-
-
 <%= link_to "Back to lists", lists_path %>
+
+</div>
